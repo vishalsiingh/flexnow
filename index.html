@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlexCard Builder </title>
+  <link rel="icon" href="logo2.png" type="image/png" />
+  <link rel="stylesheet" href="style.css">
+  <!-- fontstle -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative min-h-screen bg-gray-900 text-white">
+
+  <!-- Background Image -->
+  <div class="min-h-screen relative bg-gradient-to-br from-[#0C0C0C] via-[#481E14] to-[#9B3922] p-8 md:p-16 flex flex-col md:flex-row items-start gap-10 font-sans"> 
+
+  <!-- Top Left Fixed Header -->
+  <!-- <header class="fixed top-4 left-4 right-4 z-20 flex items-center justify-between"> -->
+  <!-- Left Content: Title + Subtitle -->
+   <header id="mainHeader" class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between transition-all duration-500 ease-in-out h-20 px-4">
+  <div>
+    <h1 class="text-3xl font-extrabold tracking-wide select-none">
+      <span class="text-orange-400"> FlexCard </span>
+      <span class="text-white"> ⚡Builder</span>
+    </h1>
+    <p class="text-sm text-white/80"> Show your skills, your way.</p>
+  </div>
+
+  <!-- Right Content: Social Icons -->
+  <div class="flex gap-4 items-center">
+    <!-- GitHub -->
+    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-white hover:text-orange-400 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+        <path d="M12 .5C5.8.5.5 5.8.5 12a11.5 11.5 0 008 11c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6a3.2 3.2 0 00-1.3-1.7c-1-.7.1-.7.1-.7a2.5 2.5 0 011.8 1.2c1 .1 1.6-.8 1.9-1.3a2.7 2.7 0 01.8-1.6c-2.6-.3-5.3-1.3-5.3-5.8a4.5 4.5 0 011.2-3.1 4.1 4.1 0 01.1-3s1-.3 3.3 1.2a11.4 11.4 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2a4.1 4.1 0 01.1 3 4.5 4.5 0 011.2 3.1c0 4.5-2.7 5.5-5.3 5.8a3 3 0 01.9 2.3v3.3c0 .3.2.7.8.6A11.5 11.5 0 0023.5 12C23.5 5.8 18.2.5 12 .5z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/vishal--kashyap/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-orange-400 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+        <path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5 2.5 2.5 0 002.52-2.5A2.5 2.5 0 004.98 3.5zM2 9h6v12H2zM9 9h5.6v1.7h.1a6.1 6.1 0 015.5-3c5.9 0 7 3.9 7 9v10h-6v-9.2c0-2.2-.1-5-3-5s-3.5 2.3-3.5 4.8V21H9z"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+
+
+  <!-- Main Container: Form (left) + Preview (right) -->
+  <!-- Main Container -->
+<main class="flex flex-col items-center justify-center min-h-screen px-8 py-12 space-y-12 max-w-7xl mx-auto">
+
+  <!-- Flex Row: Form + Preview -->
+  <div class="flex items-start justify-center w-full gap-20 px">
+
+    <!-- Form -->
+    <form id="userForm" class="w-[650px] overflow-auto bg-white/10 p-8 rounded-3xl space-y-6 text-white">
+
+      <div>
+        <label for="firstName" class="block mb-2 font-semibold">First Name</label>
+        <input id="firstName" type="text" placeholder="Your first name"
+               class="w-full p-3 rounded-lg bg-white/30 placeholder-white/70 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none transition text-white" />
+      </div>
+
+      <div>
+        <label for="profilePicUpload" class="block mb-2 font-semibold">Profile Picture</label>
+        <input id="profilePicUpload" type="file" accept="image/*"
+               class="w-full text-white cursor-pointer bg-white/10 rounded-lg p-2 border border-white/30 hover:border-orange-400 transition" />
+        <p class="text-sm text-orange-300 mt-1">Choose an image from your device</p>
+      </div>
+
+      <div>
+        <label for="title" class="block mb-2 font-semibold">What you like (Role)</label>
+        <input id="title" type="text" placeholder="Software Engineer, UI/UX..."
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+
+      <div>
+        <label for="college" class="block mb-2 font-semibold">College</label>
+        <input id="college" type="text" placeholder="Your college name"
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+
+      <div>
+        <label for="degree" class="block mb-2 font-semibold">Degree</label>
+        <input id="degree" type="text" placeholder="Your degree"
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+
+      <div>
+        <label for="skills" class="block mb-2 font-semibold">Skills</label>
+        <input id="skills" type="text" placeholder="Python, JavaScript, UI Design..."
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+
+      <div>
+        <label for="quote" class="block mb-2 font-semibold">Your Quote</label>
+        <input id="quote" type="text" placeholder="'Keep learning, keep growing.'"
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+
+      <div>
+        <label for="mobile" class="block mb-2 font-semibold">Mobile Number</label>
+        <input id="mobile" type="text" placeholder="123-456-7890"
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+
+      <div>
+        <label for="email" class="block mb-2 font-semibold">Email</label>
+        <input id="email" type="email" placeholder="your@email.com"
+               class="w-full p-3 rounded-lg bg-white/30 border border-white/20 focus:ring-2 focus:ring-orange-400 focus:outline-none text-white" />
+      </div>
+    </form>
+
+    <!-- Preview -->
+    <section
+  id="cardContainer"
+  class="max-w-md w-full backdrop-blur-lg rounded-3xl p-8 shadow-xl text-gray-900 flex flex-col items-center space-y-4 relative"
+>
+
+
+
+     <div id="previewCard"
+     class="flex flex-col items-center text-center space-y-3 w-full rounded-3xl p-8 shadow-xl"
+     style="background-image: linear-gradient(to right, #3E3232, #503C3C,#7E6363);">
+
+        <div class="w-32 h-32 rounded-full overflow-hidden shadow-lg bg-gray-200">
+          <img id="previewImage" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile Preview"
+               class="object-cover w-full h-full" />
+        </div>
+<!-- <h2 id="previewName" class="text-3xl font-black text-blue-400 tracking-wider drop-shadow-sm">
+    Your Name
+  </h2> -->
+       <h2 id="previewName"
+    class="text-3xl font-black tracking-wider drop-shadow-sm"
+    style="color: #85c1e9; font-family: 'Poppins', sans-serif;">
+  Your Name
+</h2>
+
+
+  <p id="previewTitle" class="text-xl text-white font-semibold tracking-tight">
+    Software Engineer
+  </p>
+  <p id="previewCollege" class="text-sm text-gray-300 italic">
+    Your College
+  </p>
+  <p id="previewDegree" class="text-sm text-gray-400">
+    Your Degree
+  </p>
+
+  <p id="previewSkills" class="text-sm text-orange-200 font-medium">
+    <span class="font-bold text-white">Skills:</span> HTML, CSS, JavaScript
+  </p>
+
+  <blockquote id="previewQuote" class="italic text-orange-300  border-orange-500 pl-4 text-sm">
+    "Your quote here"
+  </blockquote>
+
+  <div class="flex flex-col items-center gap-2 text-sm text-gray-200 mt-2">
+    <p class="flex items-center gap-2">
+      <span class="text-orange-400 text-lg">📞</span>
+      <span id="previewMobile">1234567890</span>
+    </p>
+    <p class="flex items-center gap-2">
+      <span class="text-orange-400 text-lg">✉️</span>
+      <span id="previewEmail">email@example.com</span>
+    </p>
+  </div>
+
+  <p class="text-[9px] text-gray-500 tracking-wider mt-4 uppercase">
+    FlexCard by <span class="text-orange-500 font-bold">vishalsiingh⚡</span>
+  </p>
+      </div>
+       <!-- Download Button Outside Card -->
+<button id="downloadBtn" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold text-white transition">
+    FlexNow
+  </button>
+
+
+  <!-- <div id="previewCard2"
+     class="flex flex-col items-center text-center space-y-3 w-full rounded-3xl p-8 shadow-xl"
+     style="background-image: linear-gradient(to right, #008080);">
+
+        <div class="w-32 h-32 rounded-full overflow-hidden shadow-lg bg-gray-200">
+          <img id="previewImage" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile Preview"
+               class="object-cover w-full h-full" />
+        </div>
+
+        <h2 id="previewName" class="text-4xl font-black text-orange-400 tracking-wider drop-shadow-sm">
+    Your Name
+  </h2>
+  <p id="previewTitle" class="text-xl text-white font-semibold tracking-tight">
+    Software Engineer
+  </p>
+  <p id="previewCollege" class="text-sm text-gray-300 italic">
+    Your College
+  </p>
+  <p id="previewDegree" class="text-sm text-gray-400">
+    Your Degree
+  </p>
+
+  <p id="previewSkills" class="text-sm text-orange-200 font-medium">
+    <span class="font-bold text-white">Skills:</span> HTML, CSS, JavaScript
+  </p>
+
+  <blockquote id="previewQuote" class="italic text-orange-300 border-l-4 border-orange-500 pl-4 text-sm">
+    "Your quote here"
+  </blockquote>
+
+  <div class="flex flex-col items-center gap-2 text-sm text-gray-200 mt-2">
+    <p class="flex items-center gap-2">
+      <span class="text-orange-400 text-lg">📞</span>
+      <span id="previewMobile">1234567890</span>
+    </p>
+    <p class="flex items-center gap-2">
+      <span class="text-orange-400 text-lg">✉️</span>
+      <span id="previewEmail">email@example.com</span>
+    </p>
+  </div>
+
+  <p class="text-[11px] text-gray-500 tracking-wider mt-4 uppercase">
+    FlexCard by <span class="text-orange-500 font-bold">vishalsiingh⚡</span>
+  </p>
+      </div>
+        Download Button Outside Card -->
+<!-- <button id="downloadBtn1" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold text-white transition">
+    Download FlexCard
+  </button> --> 
+      
+    </section>
+
+  </div>
+
+ <footer class="w-full bg-transparent text-white py-6 px-8 flex flex-col md:flex-row items-center justify-between">
+  <!-- Left -->
+  <div class="text-sm mb-3 md:mb-0">
+    © 2025 Copyright by <span class="font-semibold">vishalsiingh</span>
+  </div>
+
+  <!-- Center -->
+  <div class="text-sm mb-3 md:mb-0 font-medium">
+    Build by ❤️ <span>Vishal</span>
+  </div>
+
+  <!-- Right: Social Icons -->
+  <div class="flex space-x-6 text-lg">
+    <!-- Twitter -->
+    <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="hover:text-blue-400 transition-colors duration-300">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4.36a9.06 9.06 0 01-2.88 1.1A4.52 4.52 0 0016.5 0c-2.5 0-4.5 2.16-4.5 4.82 0 .38.04.75.12 1.11A12.81 12.81 0 013 1.6a4.82 4.82 0 00-.61 2.43c0 1.67.83 3.15 2.1 4.02a4.41 4.41 0 01-2.05-.58v.06c0 2.34 1.58 4.29 3.67 4.74a4.45 4.45 0 01-2.04.08c.58 2.06 2.3 3.55 4.34 3.6A9.03 9.03 0 010 19.53 12.78 12.78 0 006.92 21c8.3 0 12.84-7.18 12.84-13.39 0-.2 0-.39-.02-.58A9.54 9.54 0 0023 3z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/vishal--kashyap/" target="_blank" aria-label="LinkedIn" class="hover:text-blue-600 transition-colors duration-300">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M4.98 3.5C3.33 3.5 2 4.85 2 6.43c0 1.55 1.27 2.9 2.98 2.9h.03c1.71 0 3-1.35 3-2.9-.03-1.58-1.3-2.93-3.03-2.93zM2.4 8.9h5.1v12.6H2.4V8.9zm7.5 0h4.89v1.7h.07c.68-1.3 2.34-2.67 4.82-2.67 5.16 0 6.11 3.4 6.11 7.8v8.1h-5.1v-7.17c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.85-2.72 3.76v7.3H9.9V8.9z"/>
+      </svg>
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/" target="_blank" aria-label="GitHub" class="hover:text-gray-400 transition-colors duration-300">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M12 0a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.23c-3.34.73-4-1.64-4-1.64a3.15 3.15 0 00-1.33-1.76c-1.09-.74.09-.73.09-.73a2.5 2.5 0 011.82 1.24 2.54 2.54 0 003.46 1 2.56 2.56 0 01.76-1.6c-2.66-.3-5.46-1.33-5.46-5.93a4.64 4.64 0 011.24-3.21 4.3 4.3 0 01.12-3.17s1-.33 3.3 1.23a11.5 11.5 0 016 0c2.3-1.56 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.17 4.62 4.62 0 011.23 3.21c0 4.6-2.8 5.62-5.47 5.92a2.87 2.87 0 01.81 2.22v3.3c0 .32.22.7.82.58A12 12 0 0012 0z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+
+  
+
+</main>
+
+
+<!-- html2canvas CDN -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<!-- Script -->
+<script>
+  // Inputs
+  const getById = id => document.getElementById(id);
+  const firstName = getById('firstName');
+  const title = getById('title');
+  const college = getById('college');
+  const degree = getById('degree');
+  const skills = getById('skills');
+  const quote = getById('quote');
+  const mobile = getById('mobile');
+  const email = getById('email');
+  const profilePicUpload = getById('profilePicUpload');
+
+  // Outputs
+  const previewName = getById('previewName');
+  const previewTitle = getById('previewTitle');
+  const previewCollege = getById('previewCollege');
+  const previewDegree = getById('previewDegree');
+  const previewSkills = getById('previewSkills');
+  const previewQuote = getById('previewQuote');
+  const previewMobile = getById('previewMobile');
+  const previewEmail = getById('previewEmail');
+  const previewImage = getById('previewImage');
+
+  function updatePreview() {
+    previewName.textContent = firstName.value || 'Your Name';
+    previewTitle.textContent = title.value || 'Your Title';
+    previewCollege.textContent = college.value || 'Your College';
+    previewDegree.textContent = degree.value || 'Your Degree';
+    previewSkills.textContent = skills.value ? 'Skills: ' + skills.value : 'Skills: HTML, CSS, JS';
+    previewQuote.textContent = quote.value ? `"${quote.value}"` : '"Your quote here"';
+    previewMobile.textContent = mobile.value || '1234567890';
+    previewEmail.textContent = email.value || 'email@example.com';
+  }
+
+  profilePicUpload.addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = e => previewImage.src = e.target.result;
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Listen for changes
+  [firstName, title, college, degree, skills, quote, mobile, email].forEach(input => {
+    input.addEventListener('input', updatePreview);
+  });
+
+  // Update initially
+  updatePreview();
+
+  // Download as PNG
+  getById('downloadBtn').addEventListener('click', () => {
+    html2canvas(getById('previewCard'), { backgroundColor: null, scale: 5 }).then(canvas => {
+      const link = document.createElement('a');
+      link.download = `${previewName.textContent.replace(/\s+/g, '_')}_FlexCard.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }).catch(err => {
+      alert('Error generating image: ' + err);
+    });
+  });
+
+
+
+  //getById('downloadBtn1').addEventListener('click', () => {
+   // html2canvas(getById('previewCard2'), { backgroundColor: null, scale: 2 }).then(canvas => {
+     // const link = document.createElement('a');
+      //link.download = `${previewName.textContent.replace(/\s+/g, '_')}_FlexCard.png`;
+      //link.href = canvas.toDataURL('image/png');
+      //link.click();
+    //}).catch(err => {
+      //alert('Error generating image: ' + err);
+    ///});
+  // }); //
+</script>
+          
+<script>
+  const header = document.getElementById('mainHeader');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      header.classList.add('backdrop-blur-sm',   'shadow-sm');
+    } else {
+      header.classList.remove('backdrop-blur-sm',  'shadow-sm');
+    }
+  });
+</script>
+
+
+
+</body>
+
+</html>
